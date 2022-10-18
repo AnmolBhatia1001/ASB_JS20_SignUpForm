@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignUp Form</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="flex justify-center items-center h-[100vh] bg-gradient-to-r from-[#5433FF] to-[#20BDFF]">
+    
+    <div class="form-container bg-[#20BDFF] flex justify-center items-center rounded-xl h-[500px] w-[750px]">
+        <div class="form-div flex flex-col items-start px-4 gap-4 w-1/2">
+            <h2 class="text-3xl font-semibold">Create Account</h2>
+            <input type="text" placeholder="username" required class="text-xl px-4 py-2 rounded-xl  text-[#5433FF] w-full">
+            <input type="email" placeholder="email" required class="text-xl px-4 py-2 rounded-xl  text-[#5433FF] w-full">
+            <input type="password" placeholder="password" required class="text-xl px-4 py-2 rounded-xl  text-[#5433FF] w-full">
+            <input type="password" placeholder="confirm password" required class="text-xl  px-4 py-2 rounded-xl text-[#5433FF] w-full">
+            <button class="text-xl text-white text-center  font-semibold px-4 py-2 rounded-2xl bg-[#5433FF]">SignUp</button>
+            <div class="error-msg text-red-500 font-semibold text-lg">-->password do not match</div>
+        </div>
+
+        <div class="img-div  w-1/2">
+            <img src="./img.jpg" class="rounded-xl w-full">
+        </div>
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
