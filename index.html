@@ -14,10 +14,10 @@
             <h2 class="text-3xl font-semibold">Create Account</h2>
             <input type="text" placeholder="username" required class="text-xl px-4 py-2 rounded-xl  text-[#5433FF] w-full">
             <input type="email" placeholder="email" required class="text-xl px-4 py-2 rounded-xl  text-[#5433FF] w-full">
-            <input type="password" placeholder="password" required class="text-xl px-4 py-2 rounded-xl  text-[#5433FF] w-full">
-            <input type="password" placeholder="confirm password" required class="text-xl  px-4 py-2 rounded-xl text-[#5433FF] w-full">
-            <button class="text-xl text-white text-center  font-semibold px-4 py-2 rounded-2xl bg-[#5433FF]">SignUp</button>
-            <div class="error-msg text-red-500 font-semibold text-lg">-->password do not match</div>
+            <input id="userPassword" type="password" placeholder="password" required class="text-xl px-4 py-2 rounded-xl  text-[#5433FF] w-full">
+            <input id="confirmPassword" type="password" placeholder="confirm password" required class="text-xl  px-4 py-2 rounded-xl text-[#5433FF] w-full">
+            <button onclick="submitForm()" type="submit" class="text-xl text-white text-center  font-semibold px-4 py-2 rounded-2xl bg-[#5433FF]">SignUp</button>
+            <div id="error-msg" class="text-red-500 font-semibold text-lg"></div>
         </div>
 
         <div class="img-div  w-1/2">
@@ -25,6 +25,24 @@
         </div>
     </div>
 
+
+    <script>
+        let regex = /(?=(.*[0-9]))(?=.*[\!@#$%^&*()\\[\]{}\-_+=~`|:;"'<>,./?])(?=.*[a-z])(?=(.*[A-Z]))(?=(.*)).{8,}/ ;
+        let userEnteredPassword = document.getElementById("userPassword");
+        let confirmPassword = document.getElementById("confirmPassword");
+        function submitForm(){
+            if(userEnteredPassword.value == confirmPassword.value){
+                if(regex.test(userEnteredPassword.value)){
+                    document.getElementById("error-msg").innerHTML = "account has been created !!!"
+                }else{
+                    document.getElementById("error-msg").innerHTML = "Password Should have 1 lowercase letter, 1 uppercase letter, 1 number, 1 special character and be at least 8 characters long"
+                }
+
+            }else{
+                document.getElementById("error-msg").innerHTML = "-->password do not match";
+            }
+        }
+    </script>
 
     <script src="script.js"></script>
 </body>
